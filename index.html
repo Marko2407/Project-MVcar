@@ -1,0 +1,189 @@
+<html>
+<head>
+	<title> MVcar</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-3.5.1.min.js"></script>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="menu">
+			<ul>
+				<li class="logo"><img src="slike/MVlogo.png"></li>
+				<li><b><a href="#" id="gumb1" class="active">Home</a></b></li>
+					
+				<li class="dropdown">
+					<b><a href="#"id="gumb2">Services</a></b>
+					<div class="dropdown-content">
+						<a href="#">Design</a>
+						<a href="#">Outside</a>
+						<a href="#">Inside</a>
+				    </div>
+				</li>
+				<li class="dropdown">
+				<b><a href="#"id="gumb3">Product</a></b>
+					<div class="dropdown-content1">
+						<a href="#">Parfeum</a>
+						<a href="#">Color</a>
+						<a href="#">Tier</a>
+				    </div>
+				</li>
+				<li class="dropdown">
+				<b><a href="#"id="gumb4">Contact</a></b>
+					<div class="dropdown-content2">
+						<a href="#">About Us</a>
+						<a href="#">Messages</a>
+						<a href="#">Adress</a>
+				    </div>
+				</li>
+				<li><b><a href="#" class="signup-btn"><span>Sign Up</span></a></b></li>
+				
+			</ul> 
+
+			</div>
+		
+
+            <div id="slider">
+                <ul class="slides">
+                    <li class="slide slide1"></li>
+                    <li class="slide slide2"></li>
+                    <li class="slide slide3"></li>
+                    <li class="slide slide4"></li>
+                    <li class="slide slide5"></li>
+                    <li class="slide slide1"></li>
+                </ul>
+            </div>
+			
+	</div>
+		<div class="banner">
+			<div class="App-text">
+			<h1> Custom design</h1>
+			<p> Taking care of your Car forever!  </p>
+			</div>
+			<div class="levo">
+				<div class="module top">
+			    <h2><a href="#"id="gumb5" >Design</a></h2>
+			</div>
+
+			<div class="module mid">
+			 <h2><a href="#" id="gumb6">Apply</a></h2>
+			</div>
+
+			<br style="clear: both;">
+
+			<div class="module cap">
+			  <h2><a href="#" id="gumb7">Carrier</a></h2>
+			</div>
+
+			<div class="module lr">
+			  <h2><a href="#"id="gumb8">Product</a></h2>
+			</div>
+						
+					</div>
+				</div>
+<div class="footer">
+  <p>Stranica je izrađena u svrhu projekta iz kolegija elektroničko poslovanje</p>
+</div>
+
+
+	<script>
+			$(function(){                                                          //izbornik, meni 
+				$("#gumb2").on("mouseenter",function(){
+				$(".dropdown-content").slideDown(300).css("display","block");
+			});
+				$(".dropdown-content").on("mouseenter",function(){
+				$(".dropdown-content").css("display","block");
+			});
+							$("#gumb2").on("mouseleave",function(){
+				$(".dropdown-content").css("display","none");
+				
+			});
+				$("#gumb3").on("mouseenter",function(){
+				$(".dropdown-content1").slideDown(300).css("display","block");
+			});
+							$(".dropdown-content1").on("mouseenter",function(){
+				$(".dropdown-content1").css("display","block");
+			});
+										$("#gumb3").on("mouseleave",function(){
+				$(".dropdown-content1").css("display","none");
+				
+			});
+				$("#gumb4").on("mouseenter",function(){
+				$(".dropdown-content2").slideDown(300).css("display","block");
+			});
+							$(".dropdown-content2").on("mouseenter",function(){
+				$(".dropdown-content2").css("display","block");
+			});
+										$("#gumb4").on("mouseleave",function(){
+				$(".dropdown-content2").css("display","none");
+				
+			});
+		});																		 //izbornik, meni 
+		
+		$(function() {																 //slideshow,slider za slike
+
+    var width = 700;														//širina 
+    var animationSpeed = 1000;										//brzina
+    var pause = 3000;												//pauza od 3s između slika
+    var currentSlide = 1;										//poćinje od prva slika
+
+
+    var $slider = $('#slider');
+    var $slideContainer = $('.slides', $slider);
+    var $slides = $('.slide', $slider);
+
+    var interval; 
+
+    function startSlider() {
+        interval = setInterval(function() {
+            $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+                if (++currentSlide === $slides.length) {
+                    currentSlide = 1;
+                    $slideContainer.css('margin-left', 0);
+                }
+            });
+        }, pause);
+    }
+    function pauseSlider() {
+        clearInterval(interval);
+    }
+
+    $slideContainer
+        .on('mouseenter', pauseSlider)
+        .on('mouseleave', startSlider);
+
+    startSlider();
+
+
+});
+
+$(function(){ 												 //slika poveća opacity kada se ode na nju
+				$("#gumb5").on("mouseenter",function(){
+				$(".top").css("opacity","1");
+			});
+				$("#gumb5").on("mouseleave",function(){
+				$(".top").css("opacity","0.68");
+			});
+						$("#gumb6").on("mouseenter",function(){
+				$(".mid").css("opacity","1");
+			});
+				$("#gumb6").on("mouseleave",function(){
+				$(".mid").css("opacity","0.68");
+			});
+						$("#gumb7").on("mouseenter",function(){
+				$(".cap").css("opacity","1");
+			});
+				$("#gumb7").on("mouseleave",function(){
+				$(".cap").css("opacity","0.68");
+			});
+						$("#gumb8").on("mouseenter",function(){
+				$(".lr").css("opacity","1");
+			});
+				$("#gumb8").on("mouseleave",function(){
+				$(".lr").css("opacity","0.68");
+			});
+})
+	</script>
+	
+</body>	
+</html>
